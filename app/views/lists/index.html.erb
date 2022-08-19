@@ -1,19 +1,23 @@
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);">
     <div class="container">
-      <h1><strong>Save</strong> any kind of <strong>movies</strong>!</h1>
-      <p>Change your life and watch movies.</p>
+      <span data-controller="typed-js"><h1 class="form-title fw-bold"> </h1></span>
+      <p>Le Wagon Production</p>
       <a class="btn btn-hero" href="#">Watch list</a>
     </div>
   </div>
 <div class="container mt-5">
   <div class="cards">
   <% @lists.each do |list| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1625&q=80)">
-      <%= link_to list.name, list_path(list), style: "text-decoration:none"; %>
-    </div>
+    <%= link_to list_path(list), style: "text-decoration:none " do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1625&q=80)">
+        <%= list.name %>
+      </div>
+    <% end  %>
   <% end %>
-    <div class="card-category border hover:border-primary " style="">
-      <%= link_to "Add list", new_list_path, style: "text-decoration:none "; %>
-    </div>
+      <%= link_to new_list_path, style: "text-decoration:none " do %>
+        <div class="card-category border hover:border-primary text-dark" style="">
+          <i class="fa-solid fa-circle-plus p-2"></i> Add list
+        </div>
+      <% end  %>
   </div>
 </div>
