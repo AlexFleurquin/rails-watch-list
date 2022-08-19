@@ -1,0 +1,25 @@
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: black;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: grey;
+  color: white;
+}
+
+.btn-hero {
+  color: black;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #ffff;
+  transition: background 0.3s ease;
+}
+
+.btn-hero:hover {
+  background: black;
+  color: white;
+}
